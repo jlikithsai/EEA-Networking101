@@ -5,9 +5,9 @@ Please complete the assignment in the following order:
 
 ### Python Syntax
 - Objects and Data Structures
-- Chained Comparison Operators
+- Chained Comparison Operators ( Not an Assignment, Just run the cells )
 - Statements
-- Chained Comparison Operators (Duplicate; confirm necessity)
+- Functions and Methods 
 
 ### Socket Programming
 - Socket Calculator
