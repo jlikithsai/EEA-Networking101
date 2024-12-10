@@ -7,4 +7,5 @@ This is the Working Repository for the Project Networking 101 offered in EEA Win
 -  Clone your forked Repo
 -  Commit changes in your branch
 -  Pull Changes from the main repo once it's changed
-
+-  Finally get started!
+- Let's begin!!
