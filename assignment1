@@ -1,0 +1,46 @@
+#client code
+import socket
+
+def connect_to_server():
+    host = '127.0.0.1'  
+    port = 8080         
+    
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect((host, port))
+    
+    print("Connected to server!")
+    
+    while True:
+        
+        try:
+            num1 = int(input("Enter the first number: "))
+            num2 = int(input("Enter the second number: "))
+            operator = input("Enter the operation (+, -, *, /): ").strip()
+
+            if operator not in ['+', '-', '*', '/']:
+                print("Invalid operator! Please enter one of +, -, *, or /.")
+                continue
+
+            # Format the calculation expression
+            expression = f"{num1} {operator} {num2}"
+
+            # Send input to the server
+            client_socket.send(expression.encode('utf-8'))
+
+            # Receive the result from the server
+            result = client_socket.recv(1024).decode('utf-8')
+            
+            print(f"Server response: {result}")
+        
+        except ValueError:
+            print("Invalid input! Please enter valid numbers.")
+        
+        # Option to exit
+        user_exit = input("Do you want to perform another calculation? (y/n): ").strip().lower()
+        if user_exit != 'y':
+            print("Exiting...")
+            client_socket.close()
+            break
+
+if __name__ == "__main__":
+    connect_to_server()
