@@ -9,7 +9,6 @@ def perform_calculation(expression):
         'multiply': r'(\d+)\s*\*\s*(\d+)',   # Matches "3 * 4"
         'divide': r'(\d+)\s*/\s*(\d+)',      # Matches "8 / 2"
     }
-
     # Check each pattern
     for operation, pattern in patterns.items():
         match = re.match(pattern, expression)
